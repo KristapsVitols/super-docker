@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue';
 import Test from './views/Test.vue';
+import NotFound from './views/NotFound.vue';
 
 Vue.use(Router);
 
@@ -18,6 +19,11 @@ export default new Router({
             path: '/test',
             name: 'test',
             component: Test,
+        },
+        {
+            path: '*',
+            name: 'not-found',
+            component: NotFound,
         }
     ]
 })
