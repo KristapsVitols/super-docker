@@ -13,3 +13,9 @@ after_success:
   - docker push kristapsvitols/super-api
   - docker push kristapsvitols/super-client
   - docker push kristapsvitols/super-nginx
+
+deploy:
+  provider: script
+  script: bash ./deploy.sh
+  on:
+    branch: master
