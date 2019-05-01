@@ -2,6 +2,12 @@ sudo: required
 services:
   - docker
 
+before_install:
+  - echo "testing some stuff here"
+
+script:
+  - docker ps -a
+
 after_success:
   # build images
   - docker build -t kristapsvitols/super-api ./api
