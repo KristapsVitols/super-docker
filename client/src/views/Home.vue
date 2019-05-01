@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h3>Some texts....</h3>
+        <h3>Some texts.... testing</h3>
         <p v-for="(text, i) in texts" :key="i">{{ text }}</p>
     </div>
 </template>
