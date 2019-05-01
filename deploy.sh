@@ -1,2 +1,2 @@
-ssh root@104.248.36.91
-git status
+git pull
+docker-compose up --build
