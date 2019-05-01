@@ -1,6 +1,7 @@
 <template>
     <div>
         <h3>SOME TEXTS HERE HEHEHEHEHEHEHEH</h3>
+        <router-link to="/test">test</router-link>
         <p v-for="(text, i) in texts" :key="i">{{ text }}</p>
     </div>
 </template>
