@@ -1,0 +1,25 @@
+<template>
+    <div>
+        <h3>Some texts....</h3>
+        <p v-for="text in texts">{{ text }}</p>
+    </div>
+</template>
+<script>
+    export default {
+        data() {
+            return {
+                texts: [],
+            }
+        },
+        created() {
+            this.getTexts();
+        },
+        methods: {
+            getTexts() {
+                fetch('/api/texts')
+                    .then(re => re.json())
+                    .then(data => this.texts = data.texts);
+            }
+        }
+    }
+</script>
