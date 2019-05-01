@@ -1,7 +1,7 @@
 <template>
     <div>
         <h3>Some texts....</h3>
-        <p v-for="text in texts">{{ text }}</p>
+        <p v-for="(text, i) in texts" :key="i">{{ text }}</p>
     </div>
 </template>
 <script>

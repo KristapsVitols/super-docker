@@ -1,0 +1,15 @@
+sudo: required
+services:
+  - docker
+
+after_success:
+  # build images
+  - docker build -t kristapsvitols/super-api ./api
+  - docker build -t kristapsvitols/super-client ./client
+  - docker build -t kristapsvitols/super-nginx ./nginx
+  # login docker
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  # push images
+  - docker push kristapsvitols/super-api
+  - docker push kristapsvitols/super-client
+  - docker push kristapsvitols/super-nginx
